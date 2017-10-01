@@ -1,0 +1,1 @@
+http://testing.learnjs.jp.s3-website-us-east-1.amazonaws.com
