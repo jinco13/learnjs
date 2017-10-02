@@ -20,7 +20,6 @@ learnjs.anotherView = function(){
 learnjs.showView = function(hash){
   var routes = {
     '#problem': learnjs.problemView,
-    //'#problem-1': learnjs.problemView,
     '#another': learnjs.anotherView,
   };
   var hashParts = hash.split('-');
