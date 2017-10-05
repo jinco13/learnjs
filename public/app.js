@@ -9,8 +9,9 @@ learnjs.appOnReady = function(){
 }
 
 learnjs.problemView = function(problemNumber){
-  var title = 'Problem #' + problemNumber + ' Coming soon!'
-  return $('<div class="problem-view">').text(title);
+  var view = $('.templates .problem-view').clone();
+  view.find('.title').text('Problem #' + problemNumber);
+  return view;
 }
 
 learnjs.anotherView = function(){
@@ -28,3 +29,14 @@ learnjs.showView = function(hash){
     $('.view-container').empty().append(viewFn(hashParts[1]));
   };
 }
+
+learnjs.problems = [
+  {
+    description: "What is truth?",
+    code: "function problem() { return __; }"
+  },
+  {
+    description: "Simple Math",
+    code: "function problem() { return 42 === 6 * __; }"
+  }
+]
