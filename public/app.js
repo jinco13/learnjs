@@ -8,9 +8,11 @@ learnjs.appOnReady = function(){
   learnjs.showView(window.location.hash);
 }
 
-learnjs.problemView = function(problemNumber){
+learnjs.problemView = function(data){
+  var problemNumber = parseInt(data, 10);
   var view = $('.templates .problem-view').clone();
   view.find('.title').text('Problem #' + problemNumber);
+  learnjs.applyObject(learnjs.problems[problemNumber], view);
   return view;
 }
 
@@ -39,4 +41,10 @@ learnjs.problems = [
     description: "Simple Math",
     code: "function problem() { return 42 === 6 * __; }"
   }
-]
+];
+
+learnjs.applyObject = function(obj, elm){
+  for(var key in obj) {
+    elm.find('[data-name="' + key + '"]').text(obj[key]);
+  }
+};
